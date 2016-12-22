@@ -67,7 +67,6 @@ def register(request):
     context = RequestContext(request)
 
     # A boolean value for telling the template whether the registration was successful.
-    # Set to False initially. Code changes value to True when registration succeeds.
     registered = False
 
     # If it's a HTTP POST, we're interested in processing form data.
@@ -216,13 +215,8 @@ def add_contact(request):
             return redirect('/profile')
     else:
         # Present New Contact form
-        add_contact_form = AddContactForm()
-
-    # Render the template depending on the context.
-    return render_to_response(
-            'videochat/contact.html',
-            {'add_contact_form': add_contact_form},
-            context)
+        add_contact = AddContactForm()
+        return render_to_response('videochat/contact.html', {'add_contact_form':add_contact},context)
 
 def end_chat(uuid):
     # Update chat_status to Terminated

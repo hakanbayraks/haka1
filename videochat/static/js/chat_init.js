@@ -6,9 +6,9 @@
 
 function main() {
   // Get the chat ID from the URL
-  //sessid = sessionStorage.getItem('chatid');
+  sessid = sessionStorage.getItem('chatid');
   rtcid = window.location.href.split('/').pop();
-  /*
+
   if(sessid != rtcid) {
     sessionStorage.setItem('chatid',rtcid);
     console.log("SessionID: " + sessid)
@@ -16,7 +16,7 @@ function main() {
     console.log("Equal")
     window.location="/";
   }
-  */
+
 
 
   // Compatibility shim

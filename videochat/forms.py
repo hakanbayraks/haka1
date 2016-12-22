@@ -22,4 +22,4 @@ class EditContactForm(forms.ModelForm):
 class AddContactForm(forms.ModelForm):
 	class Meta:
 		model = Contact
-		fields = ('first_name','last_name','photo','email')
+		fields = ('user','email')
