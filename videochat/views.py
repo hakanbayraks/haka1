@@ -161,7 +161,7 @@ def chat(request,uuid):
     chatter = Chat.objects.all().get(chatname=uuid)
     # If chat status is waiting, call the chat_join.html template
     if chatter.chat_status == "Waiting":
-        return render_to_response('videochat/chat_join.html',{'chatter':chatter},context)
+        return render_to_response('videochat/chat_join.html',{'chatter':chatter},RequestContext(request))
     elif chatter.chat_status == "Initialize":
         # If chat status is initializing, call the chat_init.html template
         return render_to_response('videochat/chat_init.html',{'chatter':chatter,'contacts':contacts},context)
